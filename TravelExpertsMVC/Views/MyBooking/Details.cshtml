@@ -1,0 +1,52 @@
+﻿<!--
+
+ Project Workshop 5
+ Author: Mark Yves Jocson
+ Date: February 2022
+
+ -->
+@model List<TravelExpertsData.BookingDetail>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div id="package">
+    <div id="package-content">
+        <div id="package-inner">
+            <div class="container">
+                <div class="booking-wrapper">
+                    <div class="pb-3 pt-3 booking-inner">
+                        <h2>Booking Details</h2>
+                    </div>
+                </div>
+                <div class="row g-0">
+
+                    <div class="col ">
+                        <img src=@($"/image/travel_package_{@Model[0].Booking.PackageId}.jpg") class="img-fluid rounded-start img-height" alt="...">
+                    </div>
+                    <div class=" col package-data">
+                        <div class="card-body">
+                            <h5 class="card-title card-color-dark">@Model[0].Description</h5>
+                            <p class="card-text card-color mb-0"><strong>Duration:</strong> @Model[0].TripStart.ToString("yyyy-MM-dd")  until @Model[0].TripEnd.ToString("yyyy-MM-dd")</p>
+                            <p class="card-text card-color mb-0"><strong>Destination:</strong> @Model[0].Destination</p>
+                            <p class="card-text card-color mb-0"><strong>Included Products:</strong></p>
+                            @foreach (var item in Model)
+                            {
+                                <p class="card-text card-color ml-lg-5 mb-0">
+                                    @Html.DisplayFor(modelItem => item.ProductSupplier.Product.ProdName) By  @Html.DisplayFor(modelItem => item.ProductSupplier.Supplier.SupName)
+                                </p>
+                            }
+                            <a class="btn btn-submit btn-reg btn-feature mt-4" asp-action="Mybooking" type="submit">< Back</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

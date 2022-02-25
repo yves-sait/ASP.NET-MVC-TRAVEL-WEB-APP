@@ -1,0 +1,98 @@
+﻿<!--
+
+ Project Workshop 5
+ Author: Mark Yves Jocson & Jacob Ballane
+ Date: February 2022
+
+ -->
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="home">
+    <div id="home-cover" class="bg-parallax ">
+        <div id="home-content-box">
+            <div id="home-content-box-inner" class="text-start">
+                <div id="home-heading" class="animate__animated animate__fadeInDown animate__slow">
+                    <div class="container">
+                        <h4>Welcome to <span>Travel Experts</span></h4>
+                        <h3>another <span>Day.</span><br>another <span>Adventure.</span></h3>
+
+                        <div id="home-btn">
+                            <a class="btn btn-lg btn-home" asp-controller="Package" asp-action="Package" role="button" title="Explore Packages">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="feature">
+    <div class="container">
+        <div class="section-heading text-center animate__animated animate__fadeIn animate__slower">
+            <h3> Discover The Most Exciting Packages</h3>
+        </div>
+    </div>
+    <div id="feature-content">
+        <div class="feature-container animate__animated animate__fadeInLeftBig animate__slow">
+            <div class="left"></div>
+            <div class="right">
+                <div class="content ">
+                    <h1>Discover More . . .</h1>
+                    <p>Signup and discover more offers crafted to enhance your stay and create unforgettable moments.</p>
+                    <a class="btn btn-lg btn-reg" asp-controller="Account" asp-action="Register">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="feature-img">
+    <div class="container">
+        <div class="feature-img-heading animate__animated animate__fadeIn animate__slower">
+            <h4>We got you covered from east to west</h4>
+        </div>
+        <div class="row ">
+            <div class="col-md-4 animate__animated animate__fadeInLeftBig animate__slower">
+                <div class="card  text-white">
+                    <img src="/image/asia.jpg" class="card-img" alt="...">
+                    <div class="card-img-overlay  text-center">
+                        <h5 class="card-title">Wonders of Asia</h5>
+
+                        <div class="feat-img-btn text-center">
+                            <a asp-controller="Package" asp-action="Package" class="btn btn-lg btn-reg btn-feature ">View More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 animate__animated animate__fadeIn animate__slower ">
+                <div class="card  text-white">
+                    <img src="/image/travel_package1.jpg" class="card-img" alt="...">
+                    <div class="card-img-overlay text-center">
+                        <h5 class="card-title">Party in the Carribean</h5>
+
+                        <div class="feat-img-btn">
+                            <a asp-controller="Package" asp-action="Package" class="btn btn-lg btn-reg btn-feature ">View More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate__animated animate__fadeInRightBig animate__slower">
+                <div class="card  text-white">
+                    <img src="/image/travel_package2.jpg" class="card-img" alt="...">
+                    <div class="card-img-overlay  text-center">
+                        <h5 class="card-title">Scenaries of North America</h5>
+
+                        <div class="feat-img-btn">
+                            <a asp-controller="Package" asp-action="Package" class="btn btn-lg btn-reg btn-feature ">View More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

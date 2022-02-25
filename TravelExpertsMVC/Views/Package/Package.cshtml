@@ -1,0 +1,79 @@
+﻿<!--
+
+Project Workshop 5
+Author: Sung Jai Kim & Hugo Schrupp Suarez
+Date: February 2022
+
+-->
+
+@model IEnumerable<TravelExpertsData.Package>
+
+@{
+    ViewData["Title"] = "Package";
+}
+
+
+<div id="package">
+    <div id="package-cover" class="bg-package-parallax">
+        <div id="package-content-box">
+            <div id="package-content-box-inner" class="text-start">
+                <div id="package-heading">
+                    <div class="container text-center animate__animated animate__fadeInDown animate__slow">
+                        <h2>Packages</h2>
+                        <h5>Travel offers that suits your passion</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container filter-search">
+        <div class="filter-content">
+            <div class="row">
+                <div class="col-sm-3 destination">
+                    <select class="form-select select-desti" aria-label="Destination Select">
+                        <option selected>All Destination</option>
+                        <option value="1">Asia</option>
+                        <option value="2">Europe</option>
+                        <option value="3">Africa</option>
+                    </select>
+                </div>
+                <div class="col-sm-3 min-price">
+                    <input class="form-control me-2" type="search" placeholder="minimun price" aria-label="Search">
+                </div>
+
+                <div class="col-sm-3 max-price">
+                    <input class="form-control me-2" type="search" placeholder="maximum price" aria-label="Search">
+                </div>
+                <div class="col-sm-3 search-btn ">
+                    <button class="btn btn-lg btn-search" type="submit">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="package-content">
+    <div id="package-inner">
+        <div class="container">
+            @foreach (var item in Model)
+            {
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img src="/image/travel_package_@(Html.DisplayFor(modelItem => item.PackageId)).jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-6 package-data">
+                        <div class="card-body">
+                            <h5 class="card-title card-color-dark">@Html.DisplayFor(modelItem => item.PkgName)</h5>
+                            <p class="card-text card-color">@Html.DisplayFor(modelItem => item.PkgDesc)</p>
+                            <p class="card-text card-color">Duration: @Html.DisplayFor(modelItem => item.PkgStartDate)  until @Html.DisplayFor(modelItem => item.PkgEndDate)</p>
+                            <p class="card-text card-color">Price:  @Html.DisplayFor(modelItem => item.PkgBasePrice) </p>
+                            <a class="btn btn-submit btn-reg btn-feature" href="" type="submit">Book</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+
+</div>

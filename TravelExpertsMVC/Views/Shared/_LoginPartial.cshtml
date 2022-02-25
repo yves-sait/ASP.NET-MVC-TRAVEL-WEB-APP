@@ -1,0 +1,35 @@
+﻿<!--
+
+ Project Workshop 5
+ Author: Mark Yves Jocson & Jacob Ballane
+ Date: February 2022
+
+ -->
+
+<ul class="navbar-nav ml-auto text-center">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li class="nav-item ">
+            <a class="nav-link nav-txt text-dark-blue  @(ViewContext.RouteData.Values["action"].ToString() == "Update" ? "active" : "")
+               " asp-controller="Account" asp-action="Update" title="Welcome">
+                Welcome @User.FindFirst("FullName").Value !
+            </a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline  nav-txt text-dark-blue @(ViewContext.RouteData.Values["action"].ToString() == "Logout" ? "active" : "")
+                  " asp-controller="Account" asp-action="Logout"
+                  asp-route-returnUrl=@Url.Action("Index", "Home")>
+                <button type="submit" class="nav-link btn btn-link text-dark-blue">Logout</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link nav-txt text-dark-blue  @(ViewContext.RouteData.Values["action"].ToString() == "Register" ? "active" : "")  " asp-controller="Account" asp-action="Register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-txt  text-dark-blue @(ViewContext.RouteData.Values["action"].ToString() == "Login" ? "active" : "")  " asp-controller="Account" asp-action="Login">Login <i class="fa fa-user"></i></a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,85 @@
+﻿<!--
+
+ Project Workshop 5
+ Author: Mark Yves Jocson
+ Date: February 2022
+
+ -->
+
+@model IEnumerable<TravelExpertsData.Booking>
+
+@{
+    ViewData["Title"] = "Mybooking";
+}
+
+<div class="container">
+    <div class="booking-wrapper">
+        <div class="pb-3 pt-3 booking-inner">
+            <h2>Your Booking History</h2>
+        </div>
+    </div>
+
+    <table class="table table-striped mb-4">
+        <thead>
+            <tr class="head-color">
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Package.PkgName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TravelerCount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Package.PkgBasePrice)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Total Price:</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>@ViewBag.TotalPrice</th>
+                <th></th>
+            </tr>
+        </tfoot>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BookingNo)
+                    </td>
+                    <td>
+                        @item.BookingDate.ToString("yyyy-MM-dd")
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Package.PkgName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TravelerCount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Package.PkgBasePrice)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                        @Html.ActionLink("Details", "Details", new { id = item.BookingId })
+                        @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>

@@ -1,0 +1,163 @@
+﻿<!--
+ Project Workshop 5
+ Author: Hugo Schrupp Suarez
+ Date: February 2022
+
+-->
+
+@model TravelExpertsData.Customer
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+@section scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/minimum-age.js"></script>
+}
+
+
+<div class="container">
+    <div id="register">
+        <div class="fluid-container">
+            <div class="row no-gutters p-0">
+                <div class="col-xl-6">
+                    <div class="menu-image h-100 d-flex align-items-start">
+                        <img src="/image/register.jpg" class="img-fluid img-reg" alt="menu image">
+                        <div class="img-txt">
+                            <h2>Adventure <br /><span>is waiting for you!</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6">
+                    <form asp-action="Register" method="post">
+                        <div class="row p-0 mt-4">
+                            <div class="col text-center txt-form animate__animated animate__fadeInDown animate__slow">
+                                <h1>Join Us!</h1>
+                                @*<p class="text-h3">Where the journey begins! No matter where you're going from, we take you there. </p>*@
+                            </div>
+                        </div>
+                        <div class="row align-items-center mt-4 ml-0 p-0 ">
+                            <div class="col">
+                                <input asp-for="CustFirstName" class="form-control" placeholder="First Name">
+                            </div>
+                            <div class="col">
+                                <input asp-for="CustLastName" class="form-control" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="row align-items-center ml-0 p-0 ">
+                            <div class="col">
+                                <span asp-validation-for="CustFirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <span asp-validation-for="CustLastName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center ml-0 p-0">
+                            <div class="col mt-4">
+                                <input asp-for="CustAddress" type="text" class="form-control" placeholder="Address">
+                            </div>
+                        </div>
+                        <div class="row align-items-center ml-0 p-0 ">
+                            <div class="col">
+                                <span asp-validation-for="CustAddress" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row align-items-center mt-4 ml-0 p-0 ">
+                            <div class="col">
+                                <input asp-for="CustCity" class="form-control" placeholder="City">
+                            </div>
+                            <div class="col">
+                                <input asp-for="CustProv" class="form-control" placeholder="Province">
+                            </div>
+                        </div>
+                        <div class="row align-items-center ml-0 p-0 ">
+                            <div class="col">
+                                <span asp-validation-for="CustCity" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <span asp-validation-for="CustProv" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row align-items-center mt-4 ml-0 p-0 ">
+                            <div class="col">
+                                <input asp-for="CustPostal" class="form-control" placeholder="Postal">
+                            </div>
+                            <div class="col">
+                                <input asp-for="CustCountry" class="form-control" placeholder="Country">
+                            </div>
+                        </div>
+                        <div class="row align-items-center ml-0 p-0 ">
+                            <div class="col">
+                                <span asp-validation-for="CustPostal" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <span asp-validation-for="CustCountry" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row align-items-center mt-4 ml-0 p-0 ">
+                            <div class="col">
+                                <input asp-for="CustHomePhone" class="form-control" placeholder="Home Phone">
+                            </div>
+                            <div class="col">
+                                <input asp-for="CustBusPhone" class="form-control" placeholder="Business Phone (Optional)">
+                            </div>
+                        </div>
+                        <div class="row align-items-center ml-0 p-0 ">
+                            <div class="col">
+                                <span asp-validation-for="CustHomePhone" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <span asp-validation-for="CustBusPhone" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row align-items-center mt-4 ml-0 p-0 ">
+                            <div class="col">
+                                <input asp-for="CustUsername" class="form-control" placeholder="Username">
+                            </div>
+                            <div class="col">
+                                <input asp-for="CustEmail" class="form-control" placeholder="Email Address (Optional)">
+                            </div>
+                        </div>
+                        <div class="row align-items-center ml-0 p-0 ">
+                            <div class="col">
+                                <span asp-validation-for="CustUsername" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row align-items-center mt-4 ml-0 p-0 ">
+                            <div class="col">
+                                <input asp-for="CustPassword" type="password" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="col">
+                                <input asp-for="CustConfirmPassword" type="password" class="form-control" placeholder="Confirm Password">
+                            </div>
+                        </div>
+                        <div class="row align-items-center ml-0 p-0 ">
+                            <div class="col">
+                                <span asp-validation-for="CustPassword" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <span asp-validation-for="CustConfirmPassword" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row align-items-center mt-4 mb-4 ml-0 p-0 ">
+                            <div class="col">
+                                <input type="submit" value="Register" class="btn btn-primary btn-login" />
+                            </div>
+                            <div class="col">
+                                <p>Already registered?<a asp-controller="Account" asp-action="Login"> Login now.</a></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*@section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@

@@ -1,0 +1,96 @@
+﻿<!--
+ Project Workshop 5
+ Author: Sung Jai Kim
+ Date: February 2022
+-->
+
+@model TravelExpertsData.Customer
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@section scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/minimum-age.js"></script>
+}
+
+<div class="container">
+
+    <div id="login">
+        <div class="fluid-container">
+            <div class="row no-gutters p-0">
+                <div class="col-md">
+                    <div class="menu-image h-100 d-flex align-items-start">
+                        <img src="/image/login2.jpg" class="img-fluid" alt="menu image">
+                        <div class="img-txt">
+                            <h2>Start Exploring!</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md login-wrapper">
+                    <div id="wrapper">
+                        <div class="row ml-3">
+                            <div class="col-md ">
+                                <form asp-action="Login">
+                                    <div class="row p-0 mb-2">
+                                        <div class=" col-md-8 offset-md-3 text-center txt-form animate__animated animate__fadeInDown animate__slow">
+                                            <h3>Login</h3>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="row p-0 ml-2">
+                                        <div class="offset-md-2 text-danger ">
+                                            <p>@ViewBag.LoginFailed</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row p-0">
+                                        <div class="col-sm-3">
+                                            <label class="control-label txt-login">Username</label>
+                                        </div>
+                                        <div class="col-md-8 ">
+                                            <input asp-for="CustUsername" class="form-control" />
+                                        </div>
+                                        <div class="offset-sm-3 col">
+                                            <span asp-validation-for="CustUsername" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row p-0">
+                                        <div class="col-sm-3">
+                                            <label class="control-label txt-login">Password</label>
+                                        </div>
+                                        <div class="col-md-8 ">
+                                            <input type="password" asp-for="CustPassword" class="form-control" />
+                                        </div>
+                                        <div class=" offset-sm-3 col">
+                                            <span asp-validation-for="CustPassword" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    @*col-sm-3*@
+                                    <div class="form-group row p-0">
+                                        <div class=" col-md-8 offset-md-3">
+                                            <input type="submit" value="Login" class="btn btn-primary btn-login" />
+                                        </div>
+                                        <div class="offset-md-3 col-md-8 mt-4 ">
+                                            <p>Not registered yet?<a asp-controller="Account" asp-action="Register"> Create account now.</a></p>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
