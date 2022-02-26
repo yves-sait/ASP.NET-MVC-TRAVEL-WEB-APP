@@ -1,10 +1,4 @@
-﻿/*
- * 
- * Project Workshop 5
- * Author: Mark Yves Jocson
- * Date: February 2022
- * 
- */
+﻿
 
 using Microsoft.EntityFrameworkCore;
 using System;

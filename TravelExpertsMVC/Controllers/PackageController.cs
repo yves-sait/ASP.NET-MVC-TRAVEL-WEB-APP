@@ -1,8 +1,4 @@
-﻿/*
- * Project Workshop 5
- * Author: Sung Jai Kim & Hugo Schrupp Suarez
- * Date: February 2022
- */
+﻿
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
