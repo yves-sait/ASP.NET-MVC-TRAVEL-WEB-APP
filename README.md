@@ -4,8 +4,9 @@ The WEB application is a travel booking website that allows customers to book tr
 
 ## Built With
 - C#
-- ASP.NET MVC Framework
-- SQL SERVER DB
+- ASP.NET MVC
+- Entity Framework
+- MS SQL SERVER
 - HTML & CSS
 
 
@@ -24,4 +25,4 @@ The WEB application is a travel booking website that allows customers to book tr
 
 
 ## Credit
-Images credit to unsplashed and sait.ca
+Images credit to unsplash and sait.ca
